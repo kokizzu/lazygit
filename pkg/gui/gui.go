@@ -28,7 +28,6 @@ import (
 	"github.com/jesseduffield/lazygit/pkg/theme"
 	"github.com/jesseduffield/lazygit/pkg/updates"
 	"github.com/jesseduffield/lazygit/pkg/utils"
-	"github.com/jesseduffield/termbox-go"
 	"github.com/mattn/go-runewidth"
 	"github.com/sirupsen/logrus"
 )
@@ -122,7 +121,7 @@ type Gui struct {
 
 type RecordedEvent struct {
 	Timestamp int64
-	Event     *termbox.Event
+	Event     *gocui.GocuiEvent
 }
 
 type listPanelState struct {
@@ -673,6 +672,8 @@ func (gui *Gui) setColorScheme() error {
 
 	gui.g.FgColor = theme.InactiveBorderColor
 	gui.g.SelFgColor = theme.ActiveBorderColor
+	gui.g.FrameColor = theme.InactiveBorderColor
+	gui.g.SelFrameColor = theme.ActiveBorderColor
 
 	return nil
 }
