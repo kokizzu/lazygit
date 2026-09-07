@@ -120,6 +120,10 @@ separate, reviewable commit that the user decides when to fold in. A bare
 `--amend` rewrites the commit on the spot and skips that checkpoint. Don't
 treat "I'm only touching the tip commit" as an exception.
 
+Always use `fixup!` or `amend!` commits, never amend changes directly, even if
+you naturally would because "the branch isn't pushed yet". The user always wants
+to review what you changed, so make this transparent; no exceptions.
+
 **When the tip is the wrong place for a fixup, insert it mid-branch.**
 Committing a fixup at the tip of the branch only works while the code it
 touches still looks the same there; once later commits have rewritten that
