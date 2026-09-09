@@ -9,14 +9,14 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/jesseduffield/lazycore/pkg/utils"
 	"github.com/jesseduffield/lazygit/pkg/config"
+	"github.com/jesseduffield/lazygit/pkg/utils"
 	"github.com/karimkhaleel/jsonschema"
 	"github.com/samber/lo"
 )
 
 func GetSchemaDir() string {
-	return utils.GetLazyRootDirectory() + "/schema-master"
+	return utils.MustFindLazygitRootDirectory() + "/schema-master"
 }
 
 func GenerateSchema() *jsonschema.Schema {
